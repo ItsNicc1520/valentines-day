@@ -97,3 +97,4 @@ if(document.getElementById('days-counter')) {
     document.getElementById('days-counter').innerText = days + " Days";
 }
 
+
