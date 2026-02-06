@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <audio id="bg-music" loop>
+        <source src="assets/music/song.mp3" type="audio/mpeg">
+    </audio>
+
+    <header class="hero">
+        <h1 class="headline">Leandre Odayar</h1>
+        <p class="sub-headline">My Girl. My Valentine. My World.</p>
+        <div class="scroll-down">↓</div>
+    </header>
+
+    <section class="container">
+        <h2 class="section-title">Our Timeline</h2>
+        <div class="timeline">
+            <div class="timeline-item left">
+                <div class="content">
+                    <h3>The Beginning</h3>
+                    <p>The day we met. Everything changed for the better.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="content">
+                    <h3>First Date</h3>
+                    <p>I was nervous, you were perfect.</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="content">
+                    <h3>Right Now</h3>
+                    <p>Building a future (and fixing code) together.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container gallery-section">
+        <h2 class="section-title">Us ❤️</h2>
+        <div class="gallery-grid">
+            <img src="assets/images/pic1.jpg" alt="Us" class="photo">
+            <img src="assets/images/pic2.jpg" alt="Us" class="photo">
+            <img src="assets/images/pic3.jpg" alt="Us" class="photo">
+        </div>
+    </section>
+
+    <section class="final-ask">
+        <h2>The Big Question</h2>
+        <p>Leandre, will you be my Valentine?</p>
+        <div class="buttons">
+            <button class="yes-btn" onclick="celebrate()">YES 100%</button>
+            <button class="no-btn" id="noBtn" onmouseover="moveNoButton()">No</button>
+        </div>
+    </section>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Start music if coming from login
+        if(sessionStorage.getItem('access') === 'granted') {
+            const audio = document.getElementById('bg-music');
+            audio.volume = 0.5;
+            audio.play().catch(e => console.log("Audio requires interaction"));
+        } else {
+            // Redirect back if they try to skip the login
+            window.location.href = 'index.html';
+        }
+
+        // Initialize Scroll Reveal
+        ScrollReveal().reveal('.timeline-item', { interval: 200, distance: '50px', origin: 'bottom' });
+        ScrollReveal().reveal('.photo', { interval: 200, scale: 0.85 });
+    </script>
+</body>
+</html>
