@@ -89,10 +89,11 @@ function celebrate() {
 }
 
 // --- NEW: Days Counter Logic ---
-const startDate = new Date('2023-01-01'); // <--- CHANGE THIS DATE TO YOUR ANNIVERSARY (YYYY-MM-DD)
+const startDate = new Date('2020-12-15'); // <--- CHANGE THIS DATE TO YOUR ANNIVERSARY (YYYY-MM-DD)
 const today = new Date();
 const difference = today - startDate;
 const days = Math.floor(difference / (1000 * 60 * 60 * 24));
 if(document.getElementById('days-counter')) {
     document.getElementById('days-counter').innerText = days + " Days";
 }
+
