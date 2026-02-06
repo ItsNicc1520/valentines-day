@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Valentine's Day</title>
+    <title>For Leandre</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
@@ -14,14 +14,24 @@
         <source src="assets/music/song.mp3" type="audio/mpeg">
     </audio>
 
+    <div class="bg-hearts" id="bg-hearts"></div>
+
     <header class="hero">
-        <h1 class="headline">Leandre Odayar</h1>
-        <p class="sub-headline">My Girl. My Valentine. My World.</p>
-        <div class="scroll-down">↓</div>
+        <div class="hero-content">
+            <h1 class="headline">Leandre Odayar</h1>
+            <p class="sub-headline">My Girl. My Valentine. My World.</p>
+            <div class="scroll-down">↓</div>
+        </div>
     </header>
 
+    <section class="counter-banner">
+        <p>Falling in love with you for...</p>
+        <h2 id="days-counter">0 Days</h2>
+        <p>...and counting.</p>
+    </section>
+
     <section class="container">
-        <h2 class="section-title">Our Timeline</h2>
+        <h2 class="section-title">Our Story</h2>
         <div class="timeline">
             <div class="timeline-item left">
                 <div class="content">
@@ -32,7 +42,7 @@
             <div class="timeline-item right">
                 <div class="content">
                     <h3>First Date</h3>
-                    <p>I was nervous, you were perfect.</p>
+                    <p>I was nervous, you were perfect. (Edit this text!)</p>
                 </div>
             </div>
             <div class="timeline-item left">
@@ -44,12 +54,35 @@
         </div>
     </section>
 
+    <section class="container">
+        <h2 class="section-title">Why You?</h2>
+        <div class="cards-grid">
+            <div class="card">
+                <div class="icon">✨</div>
+                <h3>Your Smile</h3>
+                <p>It literally lights up my entire day when I see it.</p>
+            </div>
+            <div class="card">
+                <div class="icon">🧠</div>
+                <h3>Your Mind</h3>
+                <p>I love how smart you are and how you view the world.</p>
+            </div>
+            <div class="card">
+                <div class="icon">❤️</div>
+                <h3>Your Heart</h3>
+                <p>You are the kindest person I know.</p>
+            </div>
+        </div>
+    </section>
+
     <section class="container gallery-section">
         <h2 class="section-title">Us ❤️</h2>
         <div class="gallery-grid">
             <img src="assets/images/pic1.jpg" alt="Us" class="photo">
             <img src="assets/images/pic2.jpg" alt="Us" class="photo">
             <img src="assets/images/pic3.jpg" alt="Us" class="photo">
+            <img src="assets/images/pic4.jpg" alt="Us" class="photo">
+            <img src="assets/images/pic5.jpg" alt="Us" class="photo">
         </div>
     </section>
 
@@ -64,20 +97,19 @@
 
     <script src="js/script.js"></script>
     <script>
-        // Start music if coming from login
+        // Access Control
         if(sessionStorage.getItem('access') === 'granted') {
             const audio = document.getElementById('bg-music');
             audio.volume = 0.5;
             audio.play().catch(e => console.log("Audio requires interaction"));
         } else {
-            // Redirect back if they try to skip the login
             window.location.href = 'index.html';
         }
 
-        // Initialize Scroll Reveal
+        // Scroll Animations
         ScrollReveal().reveal('.timeline-item', { interval: 200, distance: '50px', origin: 'bottom' });
-        ScrollReveal().reveal('.photo', { interval: 200, scale: 0.85 });
+        ScrollReveal().reveal('.card', { interval: 200, scale: 0.9 });
+        ScrollReveal().reveal('.photo', { interval: 100, scale: 0.9 });
     </script>
 </body>
-
 </html>
